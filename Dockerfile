@@ -5,3 +5,5 @@ RUN mkdir /code
 WORKDIR /code
 COPY . /code/
 RUN pip install -r requirements.txt
+EXPOSE 8000
+CMD ["python", "myapp.py"]
