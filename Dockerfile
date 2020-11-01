@@ -1,8 +1,7 @@
-FROM python:3
-
-ENV PYTHONUNBUFFERED 1
-RUN mkdir /code
+FROM python:alpine3.7 
+COPY . /code
 WORKDIR /code
-COPY . /code/
-RUN pip install -r requirements.txt
-CMD ["python", "myapp.py"]
+RUN pip install -r requirements.txt 
+EXPOSE 5001 
+ENTRYPOINT [ "python" ] 
+CMD [ "demo.py" ] 
